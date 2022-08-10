@@ -18,21 +18,17 @@ app.use(cors());
 
 /* source: https://www.samanthaming.com/tidbits/19-2-ways-to-convert-to-boolean/ */
 const vlBolean = process.env.UPSIDEDOWN_MODE;
-const hereIsTheUpsideDown = (vl) => {
-  if (vl === 'true') {
-    return true;
-  }
-  return false;
-};
+console.log(vlBolean);
+const hereIsTheUpsideDown = true;
 
 app.get('/', (req, res) => {
   const characters = strangerThingsService.search(
     req.query,
-    hereIsTheUpsideDown(vlBolean),
+    hereIsTheUpsideDown,
   );
 
   res.status(200).json(characters);
-});
+});//
 
 app.listen(/* 3000 */ port, () => {
   console.log('Escutando na porta 3000');
