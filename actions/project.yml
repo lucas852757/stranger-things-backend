@@ -1,21 +1,21 @@
 # source: https://app.betrybe.com/course/back-end/deployment/deploy-docker-heroku/915a6dce-162b-4015-b499-31ecae9e9411/conteudo/734d256c-a9a5-47e2-a9c4-8cc1367cf0f0/implementando-ci-em-uma-aplicacao/47d5cc7d-9988-4df1-9120-f2c9dc29fc8a?use_case=previous_button
 
-on: ['pull_request']
+on: pull_request
 
 jobs:
   eslint:
     runs-on: 	ubuntu-20.04
     steps:
       - name: Verifica repositório do Git
-      uses: actions/checkout@v2
+        uses: actions/checkout@v2
       
       - name: Instala node com versão
-      uses: actions/setup-node@v1
-      with:
-        node-version: 12
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
 
       - name: Instala dependências
-      run: npm install
+        run: npm install
 
       - name: Executa o lint para verificar erros
-      run: npx eslint .
+        run: npx eslint .
