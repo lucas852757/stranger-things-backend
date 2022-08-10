@@ -16,6 +16,7 @@ const strangerThingsService = new StrangerThingsService(
 const port = process.env.PORT;
 app.use(cors());
 
+/* source: https://www.samanthaming.com/tidbits/19-2-ways-to-convert-to-boolean/ */
 const vlBolean = process.env.UPSIDEDOWN_MODE;
 const hereIsTheUpsideDown = (vlBolean === 'true') ? !!vlBolean : !vlBolean;
 
