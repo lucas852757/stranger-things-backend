@@ -18,7 +18,15 @@ app.use(cors());
 
 /* source: https://www.samanthaming.com/tidbits/19-2-ways-to-convert-to-boolean/ */
 
-const hereIsTheUpsideDown = true;
+// const hereIsTheUpsideDown = true;
+let hereIsTheUpsideDown;
+const vlBolean = process.env.UPSIDEDOWN_MODE;
+if (vlBolean === 'true') {
+  hereIsTheUpsideDown = true;
+}
+if (vlBolean === 'false') {
+  hereIsTheUpsideDown = false;
+}
 
 app.get('/', (req, res) => {
   const characters = strangerThingsService.search(
