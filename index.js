@@ -13,7 +13,7 @@ const strangerThingsRepository = new StrangerThingsRepository(
 const strangerThingsService = new StrangerThingsService(
   strangerThingsRepository,
 );
-
+const port = process.env.PORT;
 app.use(cors());
 
 const hereIsTheUpsideDown = true;
@@ -27,6 +27,6 @@ app.get('/', (req, res) => {
   res.status(200).json(characters);
 });
 
-app.listen(3000, () => {
+app.listen(/* 3000 */ port, () => {
   console.log('Escutando na porta 3000');
 });
