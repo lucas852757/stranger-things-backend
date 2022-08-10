@@ -18,7 +18,7 @@ app.use(cors());
 
 /* source: https://www.samanthaming.com/tidbits/19-2-ways-to-convert-to-boolean/ */
 
-const hereIsTheUpsideDown = false;
+const hereIsTheUpsideDown = true;
 
 app.get('/', (req, res) => {
   const characters = strangerThingsService.search(
